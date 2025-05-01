@@ -1,4 +1,4 @@
-package rojojun
+package rojojun.persona
 
 import rojojun.enums.Gender
 
