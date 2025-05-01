@@ -1,3 +1,6 @@
+import io.ktor.client.statement.*
+
 interface LLMConnector {
-    fun connectLLM(apiKey: String);
+    suspend fun connectLLM(apiKey: String)
+    fun connected(response: HttpResponse): Boolean
 }
