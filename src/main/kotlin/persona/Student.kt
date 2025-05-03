@@ -21,7 +21,7 @@ data class FashionPersona(
     val mainLearningChallenges: List<String>,
     val usesPrivateTutoring: Boolean,
     val feedbackOnCurrentMethods: String
-)
+) : AbstractPersona()
 
 enum class SchoolType {
     PUBLIC, PRIVATE, INTERNATIONAL

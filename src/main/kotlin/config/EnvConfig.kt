@@ -2,10 +2,9 @@ package rojojun.config
 
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
-import java.io.File
+import rojojun.function.loadFromResourceOrThrow
 import java.io.FileNotFoundException
 import java.io.IOException
-import java.io.InputStream
 import java.io.InputStreamReader
 
 @Serializable
@@ -14,7 +13,7 @@ data class EnvironmentConfig(
 )
 
 fun loadEnvConfig(filename: String = "env.json"): EnvironmentConfig? {
-    val inputStream = existInResourceOrThrow(filename)
+    val inputStream = loadFromResourceOrThrow(filename)
     return runCatching {
         val jsonString = InputStreamReader(inputStream).readText()
         val json = Json { ignoreUnknownKeys = true }
@@ -24,13 +23,6 @@ fun loadEnvConfig(filename: String = "env.json"): EnvironmentConfig? {
         .getOrNull()
 }
 
-fun existOrThrow(filename: String): File =
-    File(filename).takeIf { it.exists() }
-        ?: throw FileNotFoundException("파일을 찾을 수 없습니다 : $filename")
-
-fun existInResourceOrThrow(filename: String): InputStream =
-    object {}.javaClass.classLoader.getResourceAsStream(filename)
-        ?: throw FileNotFoundException("리소스에서 파일을 찾을 수 없습니다: $filename")
 fun exceptionFunction(exception: Throwable, filename: String) =
     when (exception) {
         is FileNotFoundException -> {

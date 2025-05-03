@@ -2,7 +2,7 @@ package rojojun.persona
 
 import rojojun.enums.Gender
 
-data class Teacher (
+data class Teacher(
     val id: String,
     val name: String,
     val age: Int,
@@ -21,24 +21,24 @@ data class Teacher (
     val selfLearningFrequency: LearningFrequency,
     val interestInMathImprovementPrograms: Boolean,
     val feedbackOnCurrentResources: String
-)
+) : AbstractPersona()
 
-    enum class InstitutionType {
-        SCHOOL, ACADEMY, OTHER
-    }
+enum class InstitutionType {
+    SCHOOL, ACADEMY, OTHER
+}
 
-    enum class AttitudeLevel {
-        VERY_POSITIVE, POSITIVE, NEUTRAL, NEGATIVE, VERY_NEGATIVE
-    }
+enum class AttitudeLevel {
+    VERY_POSITIVE, POSITIVE, NEUTRAL, NEGATIVE, VERY_NEGATIVE
+}
 
-    enum class DifficultyLevel {
-        VERY_EASY, EASY, MODERATE, HARD, VERY_HARD
-    }
+enum class DifficultyLevel {
+    VERY_EASY, EASY, MODERATE, HARD, VERY_HARD
+}
 
-    enum class EngagementLevel {
-        HIGH, MEDIUM, LOW, NONE
-    }
+enum class EngagementLevel {
+    HIGH, MEDIUM, LOW, NONE
+}
 
-    enum class LearningFrequency {
-        WEEKLY, MONTHLY, RARELY, NEVER
-    }
+enum class LearningFrequency {
+    WEEKLY, MONTHLY, RARELY, NEVER
+}

@@ -9,7 +9,7 @@ import io.ktor.client.statement.*
 import io.ktor.http.*
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
-import rojojun.getLogger
+import rojojun.function.getLogger
 
 val client = HttpClient(CIO)
 val requestBody = LLMRequest.connectionTest()

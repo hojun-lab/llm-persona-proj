@@ -13,4 +13,4 @@ data class Persona(
     val monthlyFashionBudget: String,
     val onlineShoppingExperience: String,
     val mainFashionConcerns: String
-)
+): AbstractPersona()
