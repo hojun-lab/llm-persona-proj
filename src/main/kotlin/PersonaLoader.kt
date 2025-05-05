@@ -11,7 +11,7 @@ import java.io.InputStreamReader
 class PersonaLoader {
     private val logger = getLogger<GeminiConnector>()
 
-    fun loadPersonFromCSV(filePath: String): List<AbstractPersona> {
+    fun loadPersonFromCSV(filePath: String = "persona_data.csv"): List<AbstractPersona> {
         logger.info("📊 페르소나 데이터를 로드합니다...")
 
         val file =  InputStreamReader(loadFromResourceOrThrow(filePath))
